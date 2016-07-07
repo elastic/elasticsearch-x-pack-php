@@ -1,0 +1,37 @@
+{
+  "name": "elasticsearch/watcher",
+  "description": "Watcher namespace for Elasticsearch-PHP",
+  "keywords": ["search","client", "elasticsearch", "alerts", "watcher"],
+  "type": "library",
+  "license": "Apache 2",
+  "authors": [
+    {
+      "name": "Zachary Tong"
+    }
+  ],
+  "require": {
+    "php": ">=5.4",
+    "elasticsearch/elasticsearch": "dev-master"
+  },
+  "require-dev": {
+      "cpliakas/git-wrapper": "~1.0",
+      "phpunit/phpunit": "3.7.*",
+      "symfony/yaml": "2.4.3 as 2.4.2"
+  },
+  "autoload": {
+    "psr-4": {
+      "XPack\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Xpack\\Tests\\":      "tests/"
+    }
+  },
+  "repositories": [
+    {
+      "type": "vcs",
+      "url": "https://github.com/polyfractal/Yaml"
+    }
+  ]
+}
