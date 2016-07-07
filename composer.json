@@ -1,7 +1,7 @@
 {
-  "name": "elasticsearch/watcher",
-  "description": "Watcher namespace for Elasticsearch-PHP",
-  "keywords": ["search","client", "elasticsearch", "alerts", "watcher"],
+  "name": "elasticsearch/xpack",
+  "description": "XPack namespace for Elasticsearch-PHP",
+  "keywords": ["search","client", "elasticsearch", "xpack"],
   "type": "library",
   "license": "Apache 2",
   "authors": [

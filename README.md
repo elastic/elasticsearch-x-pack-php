@@ -1,19 +1,16 @@
-elasticsearch-watcher-php
+elasticsearch-x-pack-php
 =================
 
-This repository contains the official Watcher namespace module for Elasticsearch-PHP.  It is an optional module which
-adds new APIs to the client if you are using Watcher.
+This repository contains the official X-Pack namespace module for Elasticsearch-PHP.  It is an optional module which
+adds new APIs to the client if you are using X-Pack (Watcher, Monitoring, Graph).
 
 Version Matrix
 --------------
 
 | Elasticsearch-php Version | Elasticsearch-Watcher-PHP Branch |
 | --------------------- | ------------------------ |
-| 2.0 (unreleased)   | 2.0                   |
-| 1.0        | 1.0                      |
+| 5.0 (unreleased)   | 5.0                   |
 
-If you are using the 1.x version of Elasticsearch-PHP, you should use the 1.x branch of the Watcher module.  If you are
-using 2.x version of Elasticsearch-php, use the 2.x branch of the Watcher module.
 
 
 Installation
@@ -26,8 +23,8 @@ add the watcher module:
 ```json
 {
     "require": {
-        "elasticsearch/elasticsearch": "~1.0",
-        "elasticsearch/watcher" : "~1.0"
+        "elasticsearch/elasticsearch": "~5.0",
+        "elasticsearch/xpack" : "~5.0"
     }
 }
 ```
@@ -40,23 +37,20 @@ Then update your installation:
 ```
 
 
-Using Watcher
+Using XPack
 -----
 
-Now that the Watcher namspace is installed, we need to inject it into the client library:
+Now that the XPack namspace is installed, we need to inject it into the client library:
 
 
 
 ```php
-use Watcher\WatcherNamespace;
+use Elasticsearch\ClientBuilder;
+use XPack\XPack;
 
-$params = array(
-    'hosts => array('localhost:9200'),
-    'customNamespaces' => array(
-        'watcher' => 'Watcher\WatcherNamespace' // Inject the WatcherNamespace with the 'watcher' name
-    )
-);
-$client = new Elasticsearch\Client($params);
+$client = ClientBuilder::create()
+            ->registerNamespace(XPack::Watcher()) // Inject the Watcher namespace
+            ->build();
 ```
 
 After the client has been initialized, you can invoke the `watcher()` namespace just like any other namespace:
@@ -117,7 +111,7 @@ If no explicit choice is made, assumption is that redistribution obeys rules of 
 All contributions to the library are to be so that they can be licensed under both licenses.
 
 Apache v2.0 License:
->Copyright 2013-2014 Elasticsearch
+>Copyright 2013-2016 Elasticsearch
 >
 >Licensed under the Apache License, Version 2.0 (the "License");
 >you may not use this file except in compliance with the License.
@@ -132,7 +126,7 @@ Apache v2.0 License:
 >limitations under the License.
 
 LGPL v2.1 Notice:
->Copyright (C) 2013-2014 Elasticsearch
+>Copyright (C) 2013-2016 Elasticsearch
 >
 >This library is free software; you can redistribute it and/or
 >modify it under the terms of the GNU Lesser General Public
