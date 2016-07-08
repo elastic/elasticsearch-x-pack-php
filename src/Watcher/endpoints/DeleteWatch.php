@@ -31,20 +31,18 @@ class DeleteWatch extends AbstractWatcherEndpoint
         }
 
         $id = $this->id;
-
-        return "/_watcher/watch/$id";
+        return "/_xpack/watcher/watch/$id";
     }
-
 
     /**
      * @return string[]
      */
     public function getParamWhitelist()
     {
-        return array(
+        return [
             'master_timeout',
             'force'
-        );
+        ];
     }
 
 

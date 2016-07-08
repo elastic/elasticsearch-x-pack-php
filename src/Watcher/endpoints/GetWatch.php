@@ -31,12 +31,8 @@ class GetWatch extends AbstractWatcherEndpoint
                 'id is required for GetWatch'
             );
         }
-
-        $id = $this->id;
-
-        return "/_watcher/watch/$id";
+        return "/_xpack/watcher/watch/{$this->id}";
     }
-
 
     /**
      * @return string[]
@@ -45,7 +41,6 @@ class GetWatch extends AbstractWatcherEndpoint
     {
         return array();
     }
-
 
     /**
      * @return string

@@ -19,25 +19,21 @@ use Elasticsearch\Common\Exceptions;
 class Stop extends AbstractEndpoint
 {
 
-
     /**
-     * @throws \Elasticsearch\Common\Exceptions\RuntimeException
      * @return string
      */
     public function getURI()
     {
-        return "/_watcher/_stop";
+        return "/_xpack/watcher/_stop";
     }
-
 
     /**
      * @return string[]
      */
     public function getParamWhitelist()
     {
-        return array();
+        return [];
     }
-
 
     /**
      * @return string

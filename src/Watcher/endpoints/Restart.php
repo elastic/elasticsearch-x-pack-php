@@ -19,25 +19,21 @@ use Elasticsearch\Common\Exceptions;
 class Restart extends AbstractEndpoint
 {
 
-
     /**
-     * @throws \Elasticsearch\Common\Exceptions\RuntimeException
      * @return string
      */
     public function getURI()
     {
-        return "/_watcher/_restart";
+        return "/_xpack/watcher/_restart";
     }
-
 
     /**
      * @return string[]
      */
     public function getParamWhitelist()
     {
-        return array();
+        return [];
     }
-
 
     /**
      * @return string

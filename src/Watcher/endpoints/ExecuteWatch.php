@@ -46,21 +46,18 @@ class ExecuteWatch extends AbstractWatcherEndpoint
                 'id is required for ExecuteWatch'
             );
         }
-
-        $id = $this->id;
-
-        return "/_watcher/watch/$id/_execute";
+        return "/_xpack/watcher/watch/{$this->id}/_execute";
     }
-
 
     /**
      * @return string[]
      */
     public function getParamWhitelist()
     {
-        return array();
+        return [
+            'debug'
+        ];
     }
-
 
     /**
      * @return string

@@ -18,26 +18,38 @@ use Elasticsearch\Common\Exceptions;
 
 class Stats extends AbstractEndpoint
 {
+    /** @var  string */
+    protected $metric;
 
+    public function setMetric($metric)
+    {
+        if (isset($metric) !== true) {
+            return $this;
+        }
+        $this->metric = $metric;
+    }
 
     /**
-     * @throws \Elasticsearch\Common\Exceptions\RuntimeException
      * @return string
      */
     public function getURI()
     {
-        return "/_watcher/stats";
+        $uri = "/_xpack/watcher/stats";
+        if (isset($this->metric) === true) {
+            $uri .= "/{$this->metric}";
+        }
+        return $uri;
     }
-
 
     /**
      * @return string[]
      */
     public function getParamWhitelist()
     {
-        return array();
+        return [
+            'metric'
+        ];
     }
-
 
     /**
      * @return string

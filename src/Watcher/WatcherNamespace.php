@@ -92,22 +92,6 @@ class WatcherNamespace extends AbstractNamespace
         return $endpoint->resultOrFuture($response);
     }
 
-
-    /**
-     *
-     * @param $params array Associative array of parameters
-     *
-     * @return bool
-     */
-    public function info($params)
-    {
-        $endpoint = new Endpoints\Info($this->transport);
-        $endpoint->setParams($params);
-        $response = $this->performRequest($endpoint);
-        return $endpoint->resultOrFuture($response);
-    }
-
-
     /**
      * $params['id']             = (string) Watch ID (Required)
      *        ['body']           = (hash) The watch

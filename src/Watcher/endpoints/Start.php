@@ -19,16 +19,13 @@ use Elasticsearch\Common\Exceptions;
 class Start extends AbstractEndpoint
 {
 
-
     /**
-     * @throws \Elasticsearch\Common\Exceptions\RuntimeException
      * @return string
      */
     public function getURI()
     {
-        return "/_watcher/_start";
+        return "/_xpack/watcher/_start";
     }
-
 
     /**
      * @return string[]
@@ -37,7 +34,6 @@ class Start extends AbstractEndpoint
     {
         return array();
     }
-
 
     /**
      * @return string

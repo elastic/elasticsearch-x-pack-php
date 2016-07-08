@@ -32,22 +32,18 @@ class AckWatch extends AbstractWatcherEndpoint
             );
         }
 
-        $id = $this->id;
-
-        return "/_watcher/watch/$id/_ack";
+        return "/_xpack/watcher/watch/{$this->id}/_ack";
     }
-
 
     /**
      * @return string[]
      */
     public function getParamWhitelist()
     {
-        return array(
+        return [
             'master_timeout',
-        );
+        ];
     }
-
 
     /**
      * @return string

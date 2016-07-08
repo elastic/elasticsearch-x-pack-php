@@ -48,23 +48,19 @@ class PutWatch extends AbstractWatcherEndpoint
                 'id is required for PutWatch'
             );
         }
-
-        $id = $this->id;
-
-        return "/_watcher/watch/$id";
+        return "/_watcher/watch/{$this->id}";
     }
-
 
     /**
      * @return string[]
      */
     public function getParamWhitelist()
     {
-        return array(
-            'master_timeout'
-        );
+        return [
+            'master_timeout',
+            'active'
+        ];
     }
-
 
     /**
      * @return string
