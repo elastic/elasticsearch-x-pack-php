@@ -1,6 +1,7 @@
 <?php
 namespace XPack;
 use XPack\Graph\GraphNamespaceBuilder;
+use XPack\License\LicenseNamespaceBuilder;
 use XPack\Watcher\WatcherNamespaceBuilder;
 
 /**
@@ -28,5 +29,13 @@ class XPack
     public static function Graph()
     {
         return new GraphNamespaceBuilder();
+    }
+
+    /**
+     * @return LicenseNamespaceBuilder
+     */
+    public static function License()
+    {
+        return new LicenseNamespaceBuilder();
     }
 }
