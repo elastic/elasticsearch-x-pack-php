@@ -52,6 +52,23 @@ class WatcherNamespace extends AbstractNamespace
         return $endpoint->resultOrFuture($response);
     }
 
+    /**
+     * $params['id']             = (string) Watch ID (Required)
+     *        ['master_timeout'] = (numeric)Specify timeout for watch write operation
+     *
+     * @param $params array Associative array of parameters
+     *
+     * @return bool
+     */
+    public function deactivateWatch($params)
+    {
+        $id = $this->extractArgument($params, 'id');
+
+        $endpoint = new Endpoints\DeactivateWatch($this->transport);
+        $endpoint->setId($id)->setParams($params);
+        $response = $this->performRequest($endpoint);
+        return $endpoint->resultOrFuture($response);
+    }
 
     /**
      * $params['id']             = (string) Watch ID (Required)
