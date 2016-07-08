@@ -3,24 +3,24 @@ use Elasticsearch\ClientBuilder;
 use XPack\XPack;
 
 /**
-SimpleTests *
+ * Class SimpleGraphTests
  * @category   Tests
- * @package    XPack\Watcher
+ * @package    XPack\Graph
  * @subpackage Tests
  * @author     Zachary Tong <zach@elastic.co>
  * @license    http://www.apache.org/licenses/LICENSE-2.0 Apache2
  * @link       http://elastic.co
  */
-class SimpleTests extends \PHPUnit_Framework_TestCase
+class SimpleGraphTests extends \PHPUnit_Framework_TestCase
 {
     public function testSetup()
     {
         $client = ClientBuilder::create()
-            ->registerNamespace(XPack::Watcher())
+            ->registerNamespace(XPack::Graph())
             ->build();
 
-        /** @var \XPack\Watcher\WatcherNamespace $watcherNamespace */
-        $watcherNamespace = $client->watcher();
-        $this->assertTrue(method_exists($watcherNamespace, 'info'));
+        /** @var \XPack\Graph\GraphNamespace $graphNamespace */
+        $graphNamespace = $client->graph();
+        $this->assertTrue(method_exists($graphNamespace, 'explore'));
     }
 }
