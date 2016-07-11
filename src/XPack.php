@@ -3,6 +3,7 @@ namespace XPack;
 use XPack\Graph\GraphNamespaceBuilder;
 use XPack\License\LicenseNamespaceBuilder;
 use XPack\Monitoring\MonitoringNamespaceBuilder;
+use XPack\Security\SecurityNamespaceBuilder;
 use XPack\Watcher\WatcherNamespaceBuilder;
 
 /**
@@ -46,5 +47,13 @@ class XPack
     public static function Monitoring()
     {
         return new MonitoringNamespaceBuilder();
+    }
+
+    /**
+     * @return SecurityNamespaceBuilder
+     */
+    public static function Security()
+    {
+        return new SecurityNamespaceBuilder();
     }
 }
