@@ -33,7 +33,7 @@ Then update your installation:
 
 
 ```bash
-    php composer.phar update
+php composer.phar update
 ```
 
 
