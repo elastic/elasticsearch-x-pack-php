@@ -2,7 +2,7 @@ elasticsearch-x-pack-php
 =================
 
 This repository contains the official X-Pack namespace module for Elasticsearch-PHP.  It is an optional module which
-adds new APIs to the client if you are using X-Pack (Watcher, Monitoring, Graph).
+adds new APIs to the client if you are using X-Pack (Watcher, Monitoring, Graph, License, Security).
 
 Version Matrix
 --------------
