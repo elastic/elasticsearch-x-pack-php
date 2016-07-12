@@ -7,7 +7,7 @@ adds new APIs to the client if you are using X-Pack (Watcher, Monitoring, Graph)
 Version Matrix
 --------------
 
-| Elasticsearch-php Version | Elasticsearch-Watcher-PHP Branch |
+| Elasticsearch-php Version | Elasticsearch-X-Pack-PHP Branch |
 | --------------------- | ------------------------ |
 | 5.0 (unreleased)   | 5.0                   |
 
