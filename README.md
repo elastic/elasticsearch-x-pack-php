@@ -105,10 +105,10 @@ $body = '{
    }
  }
 }'
-$params = array(
+$params = [
     'id' => 'my_watch_id',
     'body' => $body
-);
+];
 $response = $client->watcher()->putWatch($params);
 ```
 
