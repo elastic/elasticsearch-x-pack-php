@@ -17,7 +17,7 @@ Installation
 ------------
 This module is a set of additional API endpoints that can be accessed by the Elasticsearch-PHP client.  It is not a
 standalone client, so make sure you have the `elasticsearch/elasticsearch` client in your `composer.json`.  Then simply
-add the watcher module:
+add the xpack module:
 
 
 ```json
@@ -40,7 +40,8 @@ Then update your installation:
 Using XPack
 -----
 
-Now that the XPack namspace is installed, we need to inject it into the client library:
+Now that the XPack namspace is installed, we can inject individual XPack plugins that you are interested in using.
+For example, we can inject just the Watcher namespace:
 
 
 
@@ -53,7 +54,21 @@ $client = ClientBuilder::create()
             ->build();
 ```
 
-After the client has been initialized, you can invoke the `watcher()` namespace just like any other namespace:
+If you want to use multiple XPack plugins, chain together more `registerNamespace()` calls:
+
+```php
+use Elasticsearch\ClientBuilder;
+use XPack\XPack;
+
+$client = ClientBuilder::create()
+            ->registerNamespace(XPack::Watcher())    // Inject the Watcher namespace
+            ->registerNamespace(XPack::Security())   // Inject the Security namespace
+            ->registerNamespace(XPack::Monitoring()) // Inject the Monitoring namespace
+            ->build();
+```
+
+After the client has been initialized, you can invoke the registered namespaces via their name.  For example,
+here we use the `watcher()` namespace (just like any other namespace that ships with the ES-PHP client):
 
 ```php
 // Get watcher information
@@ -97,11 +112,22 @@ $params = array(
 $response = $client->watcher()->putWatch($params);
 ```
 
+Available Namespaces
+------------
+
+This module contains the following namespaces:
+
+- Graph
+- License
+- Monitoring
+- Security
+- Watcher
+
 
 Available Licenses
 -------
 
-Elasticsearch-Watcher-PHP is available under two licenses: Apache v2.0 and LGPL v2.1.
+Elasticsearch-X-Pack-PHP is available under two licenses: Apache v2.0 and LGPL v2.1.
 
 The user may choose which license they wish to use.  Since there is no discriminating executable or distribution bundle
 to differentiate licensing, the user should document their license choice externally, in case the library is re-distributed.
