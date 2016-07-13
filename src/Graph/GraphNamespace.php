@@ -11,7 +11,7 @@ use Elasticsearch\Namespaces\AbstractNamespace;
  * @package  XPack\Graph\GraphNamespace
  * @author   Zachary Tong <zach@elastic.co>
  * @license  http://www.apache.org/licenses/LICENSE-2.0 Apache2
- * @link     http://elastics.co
+ * @link     http://elastic.co
  */
 class GraphNamespace extends AbstractNamespace
 {
