@@ -9,7 +9,7 @@ Version Matrix
 
 | Elasticsearch-php Version | Elasticsearch-X-Pack-PHP Branch |
 | --------------------- | ------------------------ |
-| 5.0 (unreleased)   | 5.0                   |
+| 5.0    | 5.0                   |
 
 
 
