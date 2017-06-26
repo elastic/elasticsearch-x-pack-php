@@ -19,14 +19,13 @@ class LicenseNamespace extends AbstractNamespace
     /**
      * @param $params array Associative array of parameters
      *
-     * @return bool
+     * @return array
      */
     public function delete($params)
     {
         $endpoint = new Endpoints\Delete();
         $endpoint->setParams($params);
-        $response = $this->performRequest($endpoint);
-        return $endpoint->resultOrFuture($response);
+        return $this->performRequest($endpoint);
     }
 
     /**
@@ -34,14 +33,13 @@ class LicenseNamespace extends AbstractNamespace
      *
      * @param $params array Associative array of parameters
      *
-     * @return bool
+     * @return array
      */
     public function get($params)
     {
         $endpoint = new Endpoints\Get();
         $endpoint->setParams($params);
-        $response = $this->performRequest($endpoint);
-        return $endpoint->resultOrFuture($response);
+        return $this->performRequest($endpoint);
     }
 
     /**
@@ -49,7 +47,7 @@ class LicenseNamespace extends AbstractNamespace
      *
      * @param $params array Associative array of parameters
      *
-     * @return bool
+     * @return array
      */
     public function post($params)
     {
@@ -58,8 +56,7 @@ class LicenseNamespace extends AbstractNamespace
         $endpoint = new Endpoints\Post();
         $endpoint->setBody($body)
             ->setParams($params);
-        $response = $this->performRequest($endpoint);
-        return $endpoint->resultOrFuture($response);
+        return $this->performRequest($endpoint);
     }
 
 

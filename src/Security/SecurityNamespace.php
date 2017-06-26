@@ -20,14 +20,13 @@ class SecurityNamespace extends AbstractNamespace
      *
      * @param $params array Associative array of parameters
      *
-     * @return bool
+     * @return array
      */
     public function authenticate($params)
     {
         $endpoint = new Endpoints\Authenticate();
         $endpoint->setParams($params);
-        $response = $this->performRequest($endpoint);
-        return $endpoint->resultOrFuture($response);
+        return $this->performRequest($endpoint);
     }
 
     /**
@@ -36,7 +35,7 @@ class SecurityNamespace extends AbstractNamespace
      *
      * @param $params array Associative array of parameters
      *
-     * @return bool
+     * @return array
      */
     public function changePassword($params)
     {
@@ -47,8 +46,7 @@ class SecurityNamespace extends AbstractNamespace
         $endpoint->setUsername($username)
             ->setBody($body)
             ->setParams($params);
-        $response = $this->performRequest($endpoint);
-        return $endpoint->resultOrFuture($response);
+        return $this->performRequest($endpoint);
     }
 
     /**
@@ -57,7 +55,7 @@ class SecurityNamespace extends AbstractNamespace
      *
      * @param $params array Associative array of parameters
      *
-     * @return bool
+     * @return array
      */
     public function clearCachedRealms($params)
     {
@@ -66,8 +64,7 @@ class SecurityNamespace extends AbstractNamespace
         $endpoint = new Endpoints\ClearCachedRealms();
         $endpoint->setRealms($realms)
             ->setParams($params);
-        $response = $this->performRequest($endpoint);
-        return $endpoint->resultOrFuture($response);
+        return $this->performRequest($endpoint);
     }
 
     /**
@@ -75,7 +72,7 @@ class SecurityNamespace extends AbstractNamespace
      *
      * @param $params array Associative array of parameters
      *
-     * @return bool
+     * @return array
      */
     public function clearCachedRoles($params)
     {
@@ -84,8 +81,7 @@ class SecurityNamespace extends AbstractNamespace
         $endpoint = new Endpoints\ClearCachedRoles();
         $endpoint->setName($name)
             ->setParams($params);
-        $response = $this->performRequest($endpoint);
-        return $endpoint->resultOrFuture($response);
+        return $this->performRequest($endpoint);
     }
 
     /**
@@ -94,7 +90,7 @@ class SecurityNamespace extends AbstractNamespace
      *
      * @param $params array Associative array of parameters
      *
-     * @return bool
+     * @return array
      */
     public function deleteRole($params)
     {
@@ -103,8 +99,7 @@ class SecurityNamespace extends AbstractNamespace
         $endpoint = new Endpoints\DeleteRole();
         $endpoint->setName($name)
             ->setParams($params);
-        $response = $this->performRequest($endpoint);
-        return $endpoint->resultOrFuture($response);
+        return $this->performRequest($endpoint);
     }
 
     /**
@@ -113,7 +108,7 @@ class SecurityNamespace extends AbstractNamespace
      *
      * @param $params array Associative array of parameters
      *
-     * @return bool
+     * @return array
      */
     public function deleteUser($params)
     {
@@ -122,8 +117,7 @@ class SecurityNamespace extends AbstractNamespace
         $endpoint = new Endpoints\DeleteUser();
         $endpoint->setUsername($username)
             ->setParams($params);
-        $response = $this->performRequest($endpoint);
-        return $endpoint->resultOrFuture($response);
+        return $this->performRequest($endpoint);
     }
 
     /**
@@ -131,7 +125,7 @@ class SecurityNamespace extends AbstractNamespace
      *
      * @param $params array Associative array of parameters
      *
-     * @return bool
+     * @return array
      */
     public function getRole($params)
     {
@@ -140,8 +134,7 @@ class SecurityNamespace extends AbstractNamespace
         $endpoint = new Endpoints\GetRole();
         $endpoint->setName($name)
             ->setParams($params);
-        $response = $this->performRequest($endpoint);
-        return $endpoint->resultOrFuture($response);
+        return $this->performRequest($endpoint);
     }
 
     /**
@@ -149,7 +142,7 @@ class SecurityNamespace extends AbstractNamespace
      *
      * @param $params array Associative array of parameters
      *
-     * @return bool
+     * @return array
      */
     public function getUser($params)
     {
@@ -158,8 +151,7 @@ class SecurityNamespace extends AbstractNamespace
         $endpoint = new Endpoints\GetUser();
         $endpoint->setUsername($username)
             ->setParams($params);
-        $response = $this->performRequest($endpoint);
-        return $endpoint->resultOrFuture($response);
+        return $this->performRequest($endpoint);
     }
 
     /**
@@ -168,7 +160,7 @@ class SecurityNamespace extends AbstractNamespace
      *
      * @param $params array Associative array of parameters
      *
-     * @return bool
+     * @return array
      */
     public function putRole($params)
     {
@@ -179,8 +171,7 @@ class SecurityNamespace extends AbstractNamespace
         $endpoint->setName($name)
             ->setBody($body)
             ->setParams($params);
-        $response = $this->performRequest($endpoint);
-        return $endpoint->resultOrFuture($response);
+        return $this->performRequest($endpoint);
     }
 
     /**
@@ -189,7 +180,7 @@ class SecurityNamespace extends AbstractNamespace
      *
      * @param $params array Associative array of parameters
      *
-     * @return bool
+     * @return array
      */
     public function putUser($params)
     {
@@ -200,8 +191,7 @@ class SecurityNamespace extends AbstractNamespace
         $endpoint->setUsername($username)
             ->setBody($body)
             ->setParams($params);
-        $response = $this->performRequest($endpoint);
-        return $endpoint->resultOrFuture($response);
+        return $this->performRequest($endpoint);
     }
 
 

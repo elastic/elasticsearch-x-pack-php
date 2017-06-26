@@ -24,7 +24,7 @@ class GraphNamespace extends AbstractNamespace
      *
      * @param $params array Associative array of parameters
      *
-     * @return bool
+     * @return array
      */
     public function explore($params)
     {
@@ -37,8 +37,7 @@ class GraphNamespace extends AbstractNamespace
             ->setType($type)
             ->setBody($body)
             ->setParams($params);
-        $response = $this->performRequest($endpoint);
-        return $endpoint->resultOrFuture($response);
+        return $this->performRequest($endpoint);
     }
 
 

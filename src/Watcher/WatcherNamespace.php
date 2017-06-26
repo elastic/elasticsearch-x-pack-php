@@ -22,7 +22,7 @@ class WatcherNamespace extends AbstractNamespace
      *
      * @param $params array Associative array of parameters
      *
-     * @return bool
+     * @return array
      */
     public function ackWatch($params)
     {
@@ -30,8 +30,7 @@ class WatcherNamespace extends AbstractNamespace
 
         $endpoint = new Endpoints\AckWatch();
         $endpoint->setId($id)->setParams($params);
-        $response = $this->performRequest($endpoint);
-        return $endpoint->resultOrFuture($response);
+        return $this->performRequest($endpoint);
     }
 
     /**
@@ -40,7 +39,7 @@ class WatcherNamespace extends AbstractNamespace
      *
      * @param $params array Associative array of parameters
      *
-     * @return bool
+     * @return array
      */
     public function activateWatch($params)
     {
@@ -48,8 +47,7 @@ class WatcherNamespace extends AbstractNamespace
 
         $endpoint = new Endpoints\ActivateWatch();
         $endpoint->setId($id)->setParams($params);
-        $response = $this->performRequest($endpoint);
-        return $endpoint->resultOrFuture($response);
+        return $this->performRequest($endpoint);
     }
 
     /**
@@ -58,7 +56,7 @@ class WatcherNamespace extends AbstractNamespace
      *
      * @param $params array Associative array of parameters
      *
-     * @return bool
+     * @return array
      */
     public function deactivateWatch($params)
     {
@@ -66,8 +64,7 @@ class WatcherNamespace extends AbstractNamespace
 
         $endpoint = new Endpoints\DeactivateWatch();
         $endpoint->setId($id)->setParams($params);
-        $response = $this->performRequest($endpoint);
-        return $endpoint->resultOrFuture($response);
+        return $this->performRequest($endpoint);
     }
 
     /**
@@ -77,7 +74,7 @@ class WatcherNamespace extends AbstractNamespace
      *
      * @param $params array Associative array of parameters
      *
-     * @return bool
+     * @return array
      */
     public function deleteWatch($params)
     {
@@ -85,8 +82,7 @@ class WatcherNamespace extends AbstractNamespace
 
         $endpoint = new Endpoints\DeleteWatch();
         $endpoint->setId($id)->setParams($params);
-        $response = $this->performRequest($endpoint);
-        return $endpoint->resultOrFuture($response);
+        return $this->performRequest($endpoint);
     }
 
 
@@ -96,7 +92,7 @@ class WatcherNamespace extends AbstractNamespace
      *
      * @param $params array Associative array of parameters
      *
-     * @return bool
+     * @return array
      */
     public function executeWatch($params)
     {
@@ -105,8 +101,7 @@ class WatcherNamespace extends AbstractNamespace
 
         $endpoint = new Endpoints\ExecuteWatch();
         $endpoint->setId($id)->setbody($body)->setParams($params);
-        $response = $this->performRequest($endpoint);
-        return $endpoint->resultOrFuture($response);
+        return $this->performRequest($endpoint);
     }
 
 
@@ -115,7 +110,7 @@ class WatcherNamespace extends AbstractNamespace
      *
      * @param $params array Associative array of parameters
      *
-     * @return bool
+     * @return array
      */
     public function getWatch($params)
     {
@@ -123,8 +118,7 @@ class WatcherNamespace extends AbstractNamespace
 
         $endpoint = new Endpoints\GetWatch();
         $endpoint->setId($id)->setParams($params);
-        $response = $this->performRequest($endpoint);
-        return $endpoint->resultOrFuture($response);
+        return $this->performRequest($endpoint);
     }
 
     /**
@@ -134,7 +128,7 @@ class WatcherNamespace extends AbstractNamespace
      *
      * @param $params array Associative array of parameters
      *
-     * @return bool
+     * @return array
      */
     public function putWatch($params)
     {
@@ -143,8 +137,7 @@ class WatcherNamespace extends AbstractNamespace
 
         $endpoint = new Endpoints\PutWatch();
         $endpoint->setId($id)->setbody($body)->setParams($params);
-        $response = $this->performRequest($endpoint);
-        return $endpoint->resultOrFuture($response);
+        return $this->performRequest($endpoint);
     }
 
 
@@ -152,14 +145,13 @@ class WatcherNamespace extends AbstractNamespace
      *
      * @param $params array Associative array of parameters
      *
-     * @return bool
+     * @return array
      */
     public function restart($params)
     {
         $endpoint = new Endpoints\Restart();
         $endpoint->setParams($params);
-        $response = $this->performRequest($endpoint);
-        return $endpoint->resultOrFuture($response);
+        return $this->performRequest($endpoint);
     }
 
 
@@ -167,14 +159,13 @@ class WatcherNamespace extends AbstractNamespace
      *
      * @param $params array Associative array of parameters
      *
-     * @return bool
+     * @return array
      */
     public function start($params)
     {
         $endpoint = new Endpoints\Start();
         $endpoint->setParams($params);
-        $response = $this->performRequest($endpoint);
-        return $endpoint->resultOrFuture($response);
+        return $this->performRequest($endpoint);
     }
 
 
@@ -182,14 +173,13 @@ class WatcherNamespace extends AbstractNamespace
      *
      * @param $params array Associative array of parameters
      *
-     * @return bool
+     * @return array
      */
     public function stats($params)
     {
         $endpoint = new Endpoints\Stats();
         $endpoint->setParams($params);
-        $response = $this->performRequest($endpoint);
-        return $endpoint->resultOrFuture($response);
+        return $this->performRequest($endpoint);
     }
 
 
@@ -197,13 +187,12 @@ class WatcherNamespace extends AbstractNamespace
      *
      * @param $params array Associative array of parameters
      *
-     * @return bool
+     * @return array
      */
     public function stop($params)
     {
         $endpoint = new Endpoints\Stop();
         $endpoint->setParams($params);
-        $response = $this->performRequest($endpoint);
-        return $endpoint->resultOrFuture($response);
+        return $this->performRequest($endpoint);
     }
 }
