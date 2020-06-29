@@ -1,11 +1,11 @@
-## Removal notice
+Removal notice
+=================
 
 This repository has been integrated into [elastic/elasticsearch-php](https://github.com/elastic/elasticsearch-php) client and is no longer being maintained.
 
-elasticsearch-x-pack-php
-=================
+## elasticsearch-x-pack-php
 
-** 
+
 This repository contains the official X-Pack namespace module for Elasticsearch-PHP.  It is an optional module which
 adds new APIs to the client if you are using X-Pack (Watcher, Monitoring, Graph, License, Security).
 
